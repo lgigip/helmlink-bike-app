@@ -202,7 +202,7 @@ function App() {
             </div>
             <div className="text-center">
               <p className="text-gray-400">Per min</p>
-              <p className="text-white font-bold">$0.25</p>
+              <p className="text-white font-bold">£0.25</p>
             </div>
             <div className="text-center">
               <p className="text-gray-400">Range</p>
