@@ -123,7 +123,7 @@ function App() {
       {screen === "map" && (
         <div className="w-full max-w-sm flex flex-col gap-4">
           <div className="text-center mb-2">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>HelmLink</span>
             <p className="text-gray-400 text-sm mt-1">Nearby e-bikes</p>
           </div>
 
@@ -181,7 +181,7 @@ function App() {
         <div className="w-full max-w-sm flex flex-col gap-5">
           <button onClick={() => setScreen("map")} className="text-sm flex items-center gap-1" style={{ color: G }}>← Back</button>
           <div className="text-center">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Helmlink</span>
           </div>
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-5 flex flex-col items-center gap-3">
             <div className="text-6xl">🚲</div>
@@ -202,7 +202,7 @@ function App() {
             </div>
             <div className="text-center">
               <p className="text-gray-400">Per min</p>
-              <p className="text-white font-bold">£0.25</p>
+              <p className="text-white font-bold">$0.25</p>
             </div>
             <div className="text-center">
               <p className="text-gray-400">Range</p>
@@ -226,19 +226,19 @@ function App() {
       {screen === "helmet" && (
         <div className="w-full max-w-sm flex flex-col gap-5">
           <div className="text-center">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Helmlink</span>
           </div>
 
           <div className="text-center">
             <div className="text-5xl mb-3">⛑️</div>
             <h2 className="text-xl font-black">Add a helmet?</h2>
-            <p className="text-gray-400 text-sm mt-2">A foldable helmet is attached to this bike. It's free to use — just return it when you're done.</p>
+            <p className="text-gray-400 text-sm mt-2">There is a helmet in the basket of this bike. It's free to use — just return it at the end of your ride.</p>
           </div>
 
           <div className="bg-gray-900 rounded-2xl p-4 flex gap-3 items-start" style={{ border: `1px solid ${GB}` }}>
             <div>
-              <p className="font-bold text-sm" style={{ color: G }}>Foldable Helmet</p>
-              <p className="text-gray-400 text-xs mt-1">Compact, lightweight, certified EN1078. Folds to fit in your bag. Must be reattached to end your ride.</p>
+              <p className="font-bold text-sm" style={{ color: G }}>Helmet</p>
+              <p className="text-gray-400 text-xs mt-1">Compact, lightweight, certified EN1078. Slots into helmet bay in basket. Must be reattached and helmet bay lid closed to end your ride.</p>
             </div>
           </div>
 
@@ -250,7 +250,7 @@ function App() {
               onMouseEnter={e => (e.currentTarget.style.backgroundColor = GH)}
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = GB)}
             >
-              ⛑️ Yes, unlock helmet
+              Yes, unlock helmet
             </button>
             <button
               onClick={() => { setHelmetChosen(false); startRide(); }}
@@ -268,7 +268,7 @@ function App() {
       {screen === "riding" && (
         <div className="w-full max-w-sm flex flex-col gap-5 items-center">
           <div className="text-center">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Helmlink</span>
           </div>
 
           <div className="w-full bg-gray-900 border border-gray-800 rounded-2xl p-6 flex flex-col items-center gap-2">
@@ -311,15 +311,15 @@ function App() {
       {screen === "return" && (
         <div className="w-full max-w-sm flex flex-col gap-5">
           <div className="text-center">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Helmlink</span>
           </div>
 
           {helmetChosen ? (
             <>
               <div className="text-center">
                 <div className="text-5xl mb-3">⛑️</div>
-                <h2 className="text-xl font-black">Return your helmet</h2>
-                <p className="text-gray-400 text-sm mt-2">Fold the helmet and click it back onto the mount on the bike to end your ride.</p>
+                <h2 className="text-xl font-black">Please return your helmet</h2>
+                <p className="text-gray-400 text-sm mt-2">Slot the helmet into the lidded helmet bay in the basket, clicking it onto the mount inside, and close the lid to end your ride.</p>
               </div>
 
               <div className="w-full bg-gray-900 border border-gray-800 rounded-2xl p-4 flex flex-col gap-3">
@@ -328,14 +328,14 @@ function App() {
                     style={helmetReturned ? { backgroundColor: GB, color: "white" } : { backgroundColor: "#374151", color: "#9ca3af" }}>
                     {helmetReturned ? "✓" : "1"}
                   </div>
-                  <p className="text-sm" style={helmetReturned ? { color: G } : { color: "white" }}>Fold helmet and attach to mount</p>
+                  <p className="text-sm" style={helmetReturned ? { color: G } : { color: "white" }}>Open helmet bay lid and click into mount</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
                     style={helmetReturned ? { backgroundColor: GB, color: "white" } : { backgroundColor: "#374151", color: "#9ca3af" }}>
                     {helmetReturned ? "✓" : "2"}
                   </div>
-                  <p className="text-sm" style={helmetReturned ? { color: G } : { color: "white" }}>Hear the click — it's locked</p>
+                  <p className="text-sm" style={helmetReturned ? { color: G } : { color: "white" }}>Hear the click — it's locked. Now just close the lid.</p>
                 </div>
               </div>
 
@@ -395,7 +395,7 @@ function App() {
       {screen === "done" && (
         <div className="w-full max-w-sm flex flex-col gap-5 items-center text-center">
           <div className="text-center">
-            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Kavro</span>
+            <span className="text-2xl font-black tracking-tight" style={{ color: G }}>Helmlink</span>
           </div>
 
           <div className="text-6xl">🎉</div>
@@ -424,7 +424,7 @@ function App() {
             <div className="w-full bg-gray-900 rounded-2xl p-4 flex gap-3 items-start text-left" style={{ border: `1px solid ${GB}` }}>
               <div>
                 <p className="font-bold text-sm" style={{ color: G }}>Thanks for wearing a helmet!</p>
-                <p className="text-gray-400 text-xs mt-1">You helped keep our streets safer. See you next ride.</p>
+                <p className="text-gray-400 text-xs mt-1">You helped keep our streets safer. See you next ride!</p>
               </div>
             </div>
           )}
